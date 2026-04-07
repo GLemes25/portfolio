@@ -65,7 +65,7 @@ const projects = [
   },
 ];
 
-export function Projects() {
+export const Projects = () => {
   return (
     <section id="projects" className="py-24 px-6 bg-[#0a0a0a]">
       <div className="max-w-[1200px] mx-auto">
@@ -100,4 +100,5 @@ export function Projects() {
       </div>
     </section>
   );
-}
+};
+export default Projects;

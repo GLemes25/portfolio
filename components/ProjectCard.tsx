@@ -1,48 +1,47 @@
 "use client";
 import { ExternalLink, Github } from "lucide-react";
 import { motion } from "motion/react";
+import Image from "next/image";
 
-interface ProjectCardProps {
+type ProjectCardPropsType = {
   title: string;
   description: string;
   technologies: string[];
   githubUrl: string;
   liveUrl: string;
   image: string;
-}
+};
 
-export function ProjectCard({
+export const ProjectCard = ({
   title,
   description,
   technologies,
   githubUrl,
   liveUrl,
   image,
-}: ProjectCardProps) {
+}: ProjectCardPropsType) => {
   return (
     <motion.div
       whileHover={{ y: -8 }}
       transition={{ duration: 0.3 }}
       className="group bg-[#0a0a0a] border border-white/10 rounded-xl overflow-hidden hover:border-purple-600/50 transition-all hover:shadow-lg hover:shadow-purple-600/10"
     >
-      {/* Project Image */}
-      <div className="relative h-48 bg-gradient-to-br from-purple-600/20 to-violet-600/20 overflow-hidden">
-        <img
+      <div className="relative h-48 bg-linear-to-br from-purple-600/20 to-violet-600/20 overflow-hidden">
+        <Image
           src={image}
           alt={title}
-          className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"
+          fill
+          className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0a] via-transparent to-transparent" />
       </div>
 
-      {/* Content */}
       <div className="p-6">
         <h3 className="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">
           {title}
         </h3>
         <p className="text-gray-400 mb-4 leading-relaxed">{description}</p>
 
-        {/* Technologies */}
         <div className="flex flex-wrap gap-2 mb-6">
           {technologies.map((tech) => (
             <span
@@ -54,7 +53,6 @@ export function ProjectCard({
           ))}
         </div>
 
-        {/* Links */}
         <div className="flex gap-3">
           <a
             href={githubUrl}
@@ -78,4 +76,5 @@ export function ProjectCard({
       </div>
     </motion.div>
   );
-}
+};
+export default ProjectCard;

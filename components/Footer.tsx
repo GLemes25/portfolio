@@ -1,7 +1,8 @@
-import { Code2, Github, Linkedin, Twitter, Mail, Heart } from "lucide-react";
+import dayjs from "dayjs";
+import { Code2, Github, Heart, Linkedin, Mail, Twitter } from "lucide-react";
 
-export function Footer() {
-  const currentYear = new Date().getFullYear();
+export const Footer = () => {
+  const currentYear = dayjs().year();
 
   const footerLinks = {
     sections: [
@@ -40,10 +41,9 @@ export function Footer() {
     <footer className="bg-[#0a0a0a] border-t border-white/5">
       <div className="max-w-[1200px] mx-auto px-6 py-12">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
-          {/* Brand */}
           <div className="md:col-span-1">
             <a href="#hero" className="flex items-center gap-2 mb-4 group">
-              <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-violet-600 rounded-lg flex items-center justify-center transition-transform group-hover:scale-105">
+              <div className="w-10 h-10 bg-linear-to-br from-purple-600 to-violet-600 rounded-lg flex items-center justify-center transition-transform group-hover:scale-105">
                 <Code2 className="w-6 h-6 text-white" />
               </div>
               <span className="text-xl font-bold text-white">DevPortfolio</span>
@@ -85,7 +85,6 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Footer Links */}
           {footerLinks.sections.map((section) => (
             <div key={section.title}>
               <h4 className="text-white font-semibold mb-4">{section.title}</h4>
@@ -105,7 +104,6 @@ export function Footer() {
           ))}
         </div>
 
-        {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/5">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm flex items-center gap-2">
@@ -114,10 +112,16 @@ export function Footer() {
               React
             </p>
             <div className="flex gap-6 text-sm">
-              <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors">
+              <a
+                href="#"
+                className="text-gray-400 hover:text-purple-400 transition-colors"
+              >
                 Privacy Policy
               </a>
-              <a href="#" className="text-gray-400 hover:text-purple-400 transition-colors">
+              <a
+                href="#"
+                className="text-gray-400 hover:text-purple-400 transition-colors"
+              >
                 Terms of Service
               </a>
             </div>
@@ -126,4 +130,5 @@ export function Footer() {
       </div>
     </footer>
   );
-}
+};
+export default Footer;

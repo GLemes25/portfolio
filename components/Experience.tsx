@@ -45,7 +45,7 @@ const experiences = [
   },
 ];
 
-export function Experience() {
+export const Experience = () => {
   return (
     <section id="experience" className="py-24 px-6 bg-[#0a0a0a]">
       <div className="max-w-[1200px] mx-auto">
@@ -65,7 +65,6 @@ export function Experience() {
         </motion.div>
 
         <div className="relative">
-          {/* Timeline Line */}
           <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-white/10" />
 
           <div className="space-y-12">
@@ -80,10 +79,8 @@ export function Experience() {
                   index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                 }`}
               >
-                {/* Timeline Dot */}
                 <div className="absolute left-8 md:left-1/2 w-4 h-4 -ml-2 bg-purple-600 rounded-full border-4 border-[#0a0a0a] z-10" />
 
-                {/* Content */}
                 <div className="flex-1 ml-20 md:ml-0">
                   <div
                     className={`${
@@ -91,7 +88,6 @@ export function Experience() {
                     }`}
                   >
                     <div className="bg-[#111111] border border-white/10 rounded-xl p-6 hover:border-purple-600/50 transition-all hover:shadow-lg hover:shadow-purple-600/10">
-                      {/* Icon */}
                       <div
                         className={`inline-flex items-center justify-center w-12 h-12 bg-purple-600/10 border border-purple-600/20 rounded-lg mb-4 ${
                           index % 2 === 0 ? "md:float-right md:ml-4" : "md:mr-4"
@@ -140,7 +136,6 @@ export function Experience() {
                   </div>
                 </div>
 
-                {/* Spacer for alternating layout */}
                 <div className="hidden md:block flex-1" />
               </motion.div>
             ))}
@@ -149,4 +144,5 @@ export function Experience() {
       </div>
     </section>
   );
-}
+};
+export default Experience;

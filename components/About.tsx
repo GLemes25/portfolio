@@ -2,7 +2,7 @@
 import { Award, BookOpen, Code2, Rocket } from "lucide-react";
 import { motion } from "motion/react";
 
-export function About() {
+export const About = () => {
   const highlights = [
     {
       icon: Code2,
@@ -56,7 +56,6 @@ export function About() {
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Left - Profile */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -65,7 +64,7 @@ export function About() {
           >
             <div className="bg-[#0a0a0a] border border-white/10 rounded-xl p-8">
               <div className="flex items-center gap-6 mb-6">
-                <div className="w-24 h-24 bg-gradient-to-br from-purple-600 to-violet-600 rounded-full flex items-center justify-center text-4xl">
+                <div className="w-24 h-24 bg-linear-to-br from-purple-600 to-violet-600 rounded-full flex items-center justify-center text-4xl">
                   👨‍💻
                 </div>
                 <div>
@@ -98,9 +97,7 @@ export function About() {
             </div>
           </motion.div>
 
-          {/* Right - Highlights & Skills */}
           <div className="space-y-6">
-            {/* Highlights Grid */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -128,7 +125,6 @@ export function About() {
               ))}
             </motion.div>
 
-            {/* Skills */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -152,7 +148,6 @@ export function About() {
               </div>
             </motion.div>
 
-            {/* Education */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -185,4 +180,5 @@ export function About() {
       </div>
     </section>
   );
-}
+};
+export default About;

@@ -26,7 +26,7 @@ const technologies = [
   { name: "REST APIs", icon: Server, category: "Architecture" },
 ];
 
-export function TechStack() {
+export const TechStack = () => {
   return (
     <section id="tech-stack" className="py-24 px-6 bg-[#111111]">
       <div className="max-w-[1200px] mx-auto">
@@ -67,4 +67,5 @@ export function TechStack() {
       </div>
     </section>
   );
-}
+};
+export default TechStack;

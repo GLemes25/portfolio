@@ -2,7 +2,7 @@
 import { Github, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
 import { motion } from "motion/react";
 
-export function Contact() {
+const Contact = () => {
   const contactMethods = [
     {
       icon: Mail,
@@ -64,7 +64,6 @@ export function Contact() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {/* Contact Methods */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -92,7 +91,6 @@ export function Contact() {
             ))}
           </motion.div>
 
-          {/* Social Links */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -119,7 +117,6 @@ export function Contact() {
               </a>
             ))}
 
-            {/* CTA Button */}
             <div className="pt-4">
               <a
                 href="mailto:alex.johnson@example.com"
@@ -131,7 +128,6 @@ export function Contact() {
           </motion.div>
         </div>
 
-        {/* Additional CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -139,7 +135,7 @@ export function Contact() {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <div className="bg-gradient-to-r from-purple-600/10 to-violet-600/10 border border-purple-600/20 rounded-2xl p-8 max-w-2xl mx-auto">
+          <div className="bg-linear-to-r from-purple-600/10 to-violet-600/10 border border-purple-600/20 rounded-2xl p-8 max-w-2xl mx-auto">
             <h3 className="text-2xl font-bold text-white mb-3">
               Looking for a developer?
             </h3>
@@ -158,4 +154,5 @@ export function Contact() {
       </div>
     </section>
   );
-}
+};
+export default Contact;
