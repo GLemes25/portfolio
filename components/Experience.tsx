@@ -5,43 +5,53 @@ import { motion } from "motion/react";
 const experiences = [
   {
     type: "work",
-    title: "Senior Software Engineer",
-    company: "TechCorp Inc.",
-    location: "San Francisco, CA",
-    period: "2022 - Present",
+    title: "Desenvolvedor Trainee",
+    company: "GEOI2 Tecnologia da Informação LTDA",
+    location: "Campo Grande - MS, Brasil",
+    period: "02/2023 - 03/2024",
     description:
-      "Lead development of microservices architecture serving 1M+ users. Mentored junior developers and improved system performance by 40%.",
-    technologies: ["Java", "Spring Boot", "AWS", "PostgreSQL", "Docker"],
+      "Atuação no desenvolvimento e manutenção de sistemas corporativos para a Secretaria da Fazenda do MS. Desenvolvimento de APIs e Web Services utilizando Java, Spring Boot e Maven com integração ao SQL Server. Experiência com C# e ASP.NET MVC, além de participação em equipes ágeis com Scrum, contribuindo na análise de requisitos e melhorias contínuas.",
+    technologies: [
+      "Java",
+      "Spring Boot",
+      "C#",
+      "ASP.NET MVC",
+      "SQL Server",
+      "Scrum",
+    ],
   },
   {
     type: "work",
-    title: "Full Stack Developer",
-    company: "StartupXYZ",
-    location: "Remote",
-    period: "2020 - 2022",
+    title: "Estagiário em Desenvolvimento de Software",
+    company: "Mensurepec",
+    location: "Brasil",
+    period: "02/2021 - 06/2022",
     description:
-      "Built and deployed multiple web applications from scratch. Implemented CI/CD pipelines and established coding standards for the team.",
-    technologies: ["React", "Node.js", "MongoDB", "Kubernetes", "Jenkins"],
-  },
-  {
-    type: "work",
-    title: "Junior Developer",
-    company: "Digital Solutions Ltd.",
-    location: "New York, NY",
-    period: "2019 - 2020",
-    description:
-      "Developed features for enterprise applications and contributed to API design. Participated in code reviews and agile ceremonies.",
-    technologies: ["Java", "Spring MVC", "MySQL", "JavaScript", "Git"],
+      "Desenvolvimento e manutenção de aplicações web e mobile utilizando React.js, React Native, TypeScript e MobX. Criação de APIs com Node.js, Express e GraphQL integradas ao MongoDB. Participação em projetos de sistemas de gestão e publicação de aplicações mobile.",
+    technologies: [
+      "React",
+      "React Native",
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "GraphQL",
+    ],
   },
   {
     type: "education",
-    title: "Bachelor of Science in Computer Science",
-    company: "Stanford University",
-    location: "Stanford, CA",
-    period: "2015 - 2019",
+    title: "Engenharia da Computação (Graduação em andamento)",
+    company: "Anhanguera - Uniderp",
+    location: "Campo Grande - MS",
+    period: "2020 - 2026",
     description:
-      "Graduated with honors. Focused on software engineering, algorithms, and distributed systems. Led the university coding club.",
-    technologies: ["Data Structures", "Algorithms", "System Design", "AI/ML"],
+      "Formação com foco em desenvolvimento de software, banco de dados e engenharia de sistemas. Aplicação prática dos conceitos em projetos acadêmicos e profissionais.",
+    technologies: [
+      "Algoritmos",
+      "Estruturas de Dados",
+      "Banco de Dados",
+      "Engenharia de Software",
+    ],
   },
 ];
 
@@ -57,14 +67,15 @@ export const Experience = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Experience & Education
+            Experiência & Formação
           </h2>
           <p className="text-gray-400 text-lg">
-            My professional journey and academic background
+            Minha trajetória profissional e acadêmica na área de tecnologia
           </p>
         </motion.div>
 
         <div className="relative">
+          {/* Timeline Line */}
           <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-white/10" />
 
           <div className="space-y-12">
@@ -79,8 +90,10 @@ export const Experience = () => {
                   index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                 }`}
               >
+                {/* Timeline Dot */}
                 <div className="absolute left-8 md:left-1/2 w-4 h-4 -ml-2 bg-purple-600 rounded-full border-4 border-[#0a0a0a] z-10" />
 
+                {/* Content */}
                 <div className="flex-1 ml-20 md:ml-0">
                   <div
                     className={`${
@@ -101,11 +114,9 @@ export const Experience = () => {
                       </div>
 
                       <div className="space-y-2">
-                        <div className="flex items-center gap-2 flex-wrap">
-                          <span className="px-3 py-1 bg-purple-600/10 border border-purple-600/20 rounded-full text-purple-400 text-sm">
-                            {exp.period}
-                          </span>
-                        </div>
+                        <span className="px-3 py-1 bg-purple-600/10 border border-purple-600/20 rounded-full text-purple-400 text-sm">
+                          {exp.period}
+                        </span>
 
                         <h3 className="text-xl font-bold text-white">
                           {exp.title}

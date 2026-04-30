@@ -1,5 +1,5 @@
 "use client";
-import { Github, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { motion } from "motion/react";
 
 const Contact = () => {
@@ -7,19 +7,19 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "alex.johnson@example.com",
-      href: "mailto:alex.johnson@example.com",
+      value: "gabriellemes924@gmail.com",
+      href: "mailto:gabriellemes924@gmail.com",
     },
     {
       icon: Phone,
-      label: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567",
+      label: "Telefone",
+      value: "(67) 99117-9190",
+      href: "tel:+5567991179190",
     },
     {
       icon: MapPin,
-      label: "Location",
-      value: "San Francisco, CA",
+      label: "Localização",
+      value: "Campo Grande - MS, Brasil",
       href: "#",
     },
   ];
@@ -28,20 +28,14 @@ const Contact = () => {
     {
       icon: Github,
       label: "GitHub",
-      username: "@alexjohnson",
-      href: "https://github.com",
+      username: "GLemes25",
+      href: "https://github.com/GLemes25",
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      username: "Alex Johnson",
-      href: "https://linkedin.com",
-    },
-    {
-      icon: Twitter,
-      label: "Twitter",
-      username: "@alexjohnson",
-      href: "https://twitter.com",
+      username: "Gabriel Lemes",
+      href: "https://linkedin.com/in/gabriel-lemes-G25",
     },
   ];
 
@@ -56,14 +50,16 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Get In Touch
+            Contato
           </h2>
           <p className="text-gray-400 text-lg">
-            Feel free to reach out for collaborations or opportunities
+            Entre em contato para oportunidades como Desenvolvedor Júnior ou
+            Full Stack
           </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {/* Contatos */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -72,8 +68,9 @@ const Contact = () => {
             className="space-y-4"
           >
             <h3 className="text-xl font-bold text-white mb-6">
-              Contact Information
+              Informações de Contato
             </h3>
+
             {contactMethods.map((method) => (
               <a
                 key={method.label}
@@ -83,6 +80,7 @@ const Contact = () => {
                 <div className="w-12 h-12 bg-purple-600/10 border border-purple-600/20 rounded-lg flex items-center justify-center group-hover:bg-purple-600/20 transition-all">
                   <method.icon className="w-5 h-5 text-purple-600" />
                 </div>
+
                 <div>
                   <p className="text-gray-500 text-sm">{method.label}</p>
                   <p className="text-white font-medium">{method.value}</p>
@@ -91,6 +89,7 @@ const Contact = () => {
             ))}
           </motion.div>
 
+          {/* Redes */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -98,7 +97,10 @@ const Contact = () => {
             viewport={{ once: true }}
             className="space-y-4"
           >
-            <h3 className="text-xl font-bold text-white mb-6">Social Media</h3>
+            <h3 className="text-xl font-bold text-white mb-6">
+              Redes Profissionais
+            </h3>
+
             {socialLinks.map((social) => (
               <a
                 key={social.label}
@@ -110,6 +112,7 @@ const Contact = () => {
                 <div className="w-12 h-12 bg-purple-600/10 border border-purple-600/20 rounded-lg flex items-center justify-center group-hover:bg-purple-600/20 transition-all">
                   <social.icon className="w-5 h-5 text-purple-600" />
                 </div>
+
                 <div>
                   <p className="text-gray-500 text-sm">{social.label}</p>
                   <p className="text-white font-medium">{social.username}</p>
@@ -117,17 +120,28 @@ const Contact = () => {
               </a>
             ))}
 
-            <div className="pt-4">
+            {/* CTA */}
+            <div className="pt-4 flex gap-4">
               <a
-                href="mailto:alex.johnson@example.com"
-                className="block w-full px-6 py-4 bg-purple-600 hover:bg-purple-700 text-white text-center rounded-xl transition-all font-semibold"
+                href="mailto:gabriellemes924@gmail.com"
+                className="flex-1 px-6 py-4 bg-purple-600 hover:bg-purple-700 text-white text-center rounded-xl transition-all font-semibold"
               >
-                Send me an email
+                Enviar Email
+              </a>
+
+              <a
+                href="https://wa.me/5567991179190"
+                target="_blank"
+                className="flex-1 px-6 py-4 bg-green-600 hover:bg-green-700 text-white text-center rounded-xl transition-all font-semibold flex items-center justify-center gap-2"
+              >
+                <Phone className="w-5 h-5" />
+                WhatsApp
               </a>
             </div>
           </motion.div>
         </div>
 
+        {/* CTA Final */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -137,17 +151,19 @@ const Contact = () => {
         >
           <div className="bg-linear-to-r from-purple-600/10 to-violet-600/10 border border-purple-600/20 rounded-2xl p-8 max-w-2xl mx-auto">
             <h3 className="text-2xl font-bold text-white mb-3">
-              Looking for a developer?
+              Procurando um desenvolvedor?
             </h3>
+
             <p className="text-gray-400 mb-6">
-              Im available for freelance projects and full-time opportunities.
-              Lets build something amazing together!
+              Estou disponível para oportunidades como Desenvolvedor Júnior ou
+              Full Stack. Vamos construir algo juntos!
             </p>
+
             <a
-              href="mailto:alex.johnson@example.com"
+              href="mailto:gabriellemes924@gmail.com"
               className="inline-block px-8 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-all font-semibold"
             >
-              Start a conversation
+              Iniciar conversa
             </a>
           </div>
         </motion.div>

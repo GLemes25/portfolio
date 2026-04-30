@@ -6,35 +6,35 @@ export const About = () => {
   const highlights = [
     {
       icon: Code2,
-      title: "5+ Years Experience",
-      description: "Building scalable web applications",
+      title: "2+ Anos de Experiência",
+      description: "Desenvolvendo aplicações web e APIs",
     },
     {
       icon: Rocket,
-      title: "50+ Projects",
-      description: "Delivered across various industries",
+      title: "Projetos Reais",
+      description: "Sistemas corporativos e aplicações web/mobile",
     },
     {
       icon: Award,
-      title: "Certified Developer",
-      description: "AWS & Oracle certified professional",
+      title: "Experiência Profissional",
+      description: "Atuação em empresa e projetos governamentais",
     },
     {
       icon: BookOpen,
-      title: "Continuous Learner",
-      description: "Always exploring new technologies",
+      title: "Aprendizado Contínuo",
+      description: "Evoluindo constantemente na área de tecnologia",
     },
   ];
 
   const skills = [
-    "Backend Development",
-    "Frontend Development",
-    "REST API Design",
-    "Database Design",
-    "Cloud Architecture",
-    "DevOps & CI/CD",
-    "Microservices",
-    "System Design",
+    "Desenvolvimento Backend (Java, C#)",
+    "Desenvolvimento Frontend (React)",
+    "APIs REST e Web Services",
+    "Banco de Dados (SQL Server, MongoDB)",
+    "Integração de Sistemas",
+    "Versionamento com Git",
+    "Metodologias Ágeis (Scrum)",
+    "Desenvolvimento Full Stack",
   ];
 
   return (
@@ -48,14 +48,15 @@ export const About = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            About Me
+            Sobre Mim
           </h2>
           <p className="text-gray-400 text-lg">
-            Get to know more about my background and expertise
+            Conheça mais sobre minha trajetória e experiência como desenvolvedor
           </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
+          {/* Left - Perfil */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -69,35 +70,39 @@ export const About = () => {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-white mb-1">
-                    Alex Johnson
+                    Gabriel Lemes
                   </h3>
-                  <p className="text-purple-400">Full Stack Developer</p>
+                  <p className="text-purple-400">
+                    Desenvolvedor Full Stack Júnior
+                  </p>
                 </div>
               </div>
 
               <p className="text-gray-400 leading-relaxed mb-6">
-                Im a passionate software developer with expertise in building
-                modern web applications. With a strong foundation in both
-                frontend and backend technologies, I create robust, scalable
-                solutions that solve real-world problems.
+                Desenvolvedor com cerca de 2 anos de experiência atuando no
+                desenvolvimento de aplicações web, APIs e sistemas corporativos.
+                Tenho experiência prática com Java (Spring Boot), C#, React e
+                banco de dados relacionais e não relacionais.
               </p>
 
               <p className="text-gray-400 leading-relaxed mb-6">
-                My journey in software development started with Java and Spring
-                Boot, and has expanded to include modern JavaScript frameworks,
-                cloud technologies, and DevOps practices. I believe in writing
-                clean, maintainable code and following industry best practices.
+                Já atuei em projetos reais, incluindo sistemas para o setor
+                público, com foco em desempenho, estabilidade e integração de
+                sistemas. Tenho familiaridade com metodologias ágeis (Scrum) e
+                boas práticas de desenvolvimento.
               </p>
 
               <p className="text-gray-400 leading-relaxed">
-                When Im not coding, I enjoy contributing to open-source
-                projects, writing technical blog posts, and mentoring aspiring
-                developers.
+                Busco uma oportunidade como Desenvolvedor Júnior ou Full Stack
+                para continuar evoluindo tecnicamente e contribuir com soluções
+                eficientes e bem estruturadas.
               </p>
             </div>
           </motion.div>
 
+          {/* Right - Destaques + Skills */}
           <div className="space-y-6">
+            {/* Highlights */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -133,8 +138,9 @@ export const About = () => {
               className="bg-[#0a0a0a] border border-white/10 rounded-xl p-8"
             >
               <h4 className="text-xl font-bold text-white mb-6">
-                Core Competencies
+                Principais Competências
               </h4>
+
               <div className="grid grid-cols-2 gap-3">
                 {skills.map((skill) => (
                   <div
@@ -148,6 +154,7 @@ export const About = () => {
               </div>
             </motion.div>
 
+            {/* Formação */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -155,24 +162,15 @@ export const About = () => {
               viewport={{ once: true }}
               className="bg-[#0a0a0a] border border-white/10 rounded-xl p-8"
             >
-              <h4 className="text-xl font-bold text-white mb-4">Education</h4>
-              <div className="space-y-3">
-                <div>
-                  <h5 className="text-white font-semibold">
-                    B.S. Computer Science
-                  </h5>
-                  <p className="text-gray-400 text-sm">
-                    Stanford University • 2015-2019
-                  </p>
-                </div>
-                <div>
-                  <h5 className="text-white font-semibold">
-                    AWS Solutions Architect
-                  </h5>
-                  <p className="text-gray-400 text-sm">
-                    Amazon Web Services • 2021
-                  </p>
-                </div>
+              <h4 className="text-xl font-bold text-white mb-4">Formação</h4>
+
+              <div>
+                <h5 className="text-white font-semibold">
+                  Engenharia da Computação
+                </h5>
+                <p className="text-gray-400 text-sm">
+                  Anhanguera-Uniderp • 2020 - 2026 (em andamento)
+                </p>
               </div>
             </motion.div>
           </div>

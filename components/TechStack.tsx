@@ -1,29 +1,20 @@
 "use client";
-import {
-  Boxes,
-  Cloud,
-  Code2,
-  Container,
-  Database,
-  GitBranch,
-  Laptop,
-  Server,
-} from "lucide-react";
+import { Code2, Database, GitBranch, Laptop, Server } from "lucide-react";
 import { motion } from "motion/react";
 
 const technologies = [
   { name: "Java", icon: Code2, category: "Backend" },
   { name: "Spring Boot", icon: Server, category: "Framework" },
+  { name: "C#", icon: Code2, category: "Backend" },
+  { name: "ASP.NET MVC", icon: Server, category: "Framework" },
   { name: "React", icon: Laptop, category: "Frontend" },
+  { name: "JavaScript", icon: Code2, category: "Language" },
   { name: "TypeScript", icon: Code2, category: "Language" },
   { name: "Node.js", icon: Server, category: "Runtime" },
-  { name: "PostgreSQL", icon: Database, category: "Database" },
-  { name: "Docker", icon: Container, category: "DevOps" },
-  { name: "Git", icon: GitBranch, category: "Version Control" },
-  { name: "AWS", icon: Cloud, category: "Cloud" },
+  { name: "SQL Server", icon: Database, category: "Database" },
   { name: "MongoDB", icon: Database, category: "Database" },
-  { name: "Kubernetes", icon: Boxes, category: "Orchestration" },
   { name: "REST APIs", icon: Server, category: "Architecture" },
+  { name: "Git", icon: GitBranch, category: "Versionamento" },
 ];
 
 export const TechStack = () => {
@@ -38,10 +29,10 @@ export const TechStack = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Tech Stack
+            Tecnologias
           </h2>
           <p className="text-gray-400 text-lg">
-            Technologies I work with to build modern applications
+            Tecnologias que utilizo no desenvolvimento de aplicações modernas
           </p>
         </motion.div>
 
@@ -58,7 +49,9 @@ export const TechStack = () => {
             >
               <div className="bg-[#0a0a0a] border border-white/10 rounded-xl p-6 hover:border-purple-600/50 transition-all hover:shadow-lg hover:shadow-purple-600/10">
                 <tech.icon className="w-10 h-10 text-purple-600 mb-4 group-hover:scale-110 transition-transform" />
+
                 <h3 className="text-white font-semibold mb-1">{tech.name}</h3>
+
                 <p className="text-gray-500 text-sm">{tech.category}</p>
               </div>
             </motion.div>
