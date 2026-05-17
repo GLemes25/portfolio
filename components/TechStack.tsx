@@ -1,20 +1,62 @@
 "use client";
-import { Code2, Database, GitBranch, Laptop, Server } from "lucide-react";
 import { motion } from "motion/react";
+import { DiMsqlServer } from "react-icons/di";
+import { FaJava } from "react-icons/fa6";
+import {
+  SiDotnet,
+  SiGit,
+  SiJavascript,
+  SiMongodb,
+  SiNodedotjs,
+  SiReact,
+  SiSpringboot,
+  SiTypescript,
+} from "react-icons/si";
+import { TbApi, TbBrandCSharp } from "react-icons/tb";
 
 const technologies = [
-  { name: "Java", icon: Code2, category: "Backend" },
-  { name: "Spring Boot", icon: Server, category: "Framework" },
-  { name: "C#", icon: Code2, category: "Backend" },
-  { name: "ASP.NET MVC", icon: Server, category: "Framework" },
-  { name: "React", icon: Laptop, category: "Frontend" },
-  { name: "JavaScript", icon: Code2, category: "Language" },
-  { name: "TypeScript", icon: Code2, category: "Language" },
-  { name: "Node.js", icon: Server, category: "Runtime" },
-  { name: "SQL Server", icon: Database, category: "Database" },
-  { name: "MongoDB", icon: Database, category: "Database" },
-  { name: "REST APIs", icon: Server, category: "Architecture" },
-  { name: "Git", icon: GitBranch, category: "Versionamento" },
+  { name: "Java", icon: FaJava, category: "Backend", color: "#CC2927" },
+  {
+    name: "Spring Boot",
+    icon: SiSpringboot,
+    category: "Framework",
+    color: "#6DB33F",
+  },
+  { name: "C#", icon: TbBrandCSharp, category: "Backend", color: "#9B4F96" },
+  {
+    name: "ASP.NET MVC",
+    icon: SiDotnet,
+    category: "Framework",
+    color: "#512BD4",
+  },
+  { name: "React", icon: SiReact, category: "Frontend", color: "#61DAFB" },
+  {
+    name: "JavaScript",
+    icon: SiJavascript,
+    category: "Language",
+    color: "#F7DF1E",
+  },
+  {
+    name: "TypeScript",
+    icon: SiTypescript,
+    category: "Language",
+    color: "#3178C6",
+  },
+  { name: "Node.js", icon: SiNodedotjs, category: "Runtime", color: "#339933" },
+  {
+    name: "SQL Server",
+    icon: DiMsqlServer,
+    category: "Database",
+    color: "#CC2927",
+  },
+  { name: "MongoDB", icon: SiMongodb, category: "Database", color: "#47A248" },
+  {
+    name: "REST APIs",
+    icon: TbApi,
+    category: "Architecture",
+    color: "#38BDF8",
+  },
+  { name: "Git", icon: SiGit, category: "Versionamento", color: "#F05032" },
 ];
 
 export const TechStack = () => {
@@ -45,13 +87,12 @@ export const TechStack = () => {
               transition={{ duration: 0.5, delay: index * 0.05 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.05 }}
-              className="group"
+              className="group focus-within:opacity-90 transition-opacity"
+              style={{ "--tech-color": tech.color } as React.CSSProperties}
             >
-              <div className="bg-[#0a0a0a] border border-white/10 rounded-xl p-6 hover:border-purple-600/50 transition-all hover:shadow-lg hover:shadow-purple-600/10">
-                <tech.icon className="w-10 h-10 text-purple-600 mb-4 group-hover:scale-110 transition-transform" />
-
+              <div className="bg-[#0a0a0a] border border-white/10 rounded-xl p-6 hover:border-(--tech-color) transition-all hover:shadow-lg h-full flex flex-col items-center text-center">
+                <tech.icon className="w-10 h-10 text-gray-500 mb-4 group-hover:text-(--tech-color) group-hover:scale-110 transition-all duration-300" />
                 <h3 className="text-white font-semibold mb-1">{tech.name}</h3>
-
                 <p className="text-gray-500 text-sm">{tech.category}</p>
               </div>
             </motion.div>
@@ -61,4 +102,5 @@ export const TechStack = () => {
     </section>
   );
 };
+
 export default TechStack;
