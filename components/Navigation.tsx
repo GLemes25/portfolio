@@ -1,8 +1,9 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { menuItems } from "@/datas/navigations";
-import { Code2, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
+import Image from "next/image";
 import { useState } from "react";
 
 const Navigation = () => {
@@ -13,10 +14,17 @@ const Navigation = () => {
       <div className="max-w-300 mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <a href="#hero" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 bg-linear-to-br from-purple-600 to-violet-600 rounded-lg flex items-center justify-center transition-transform group-hover:scale-105">
-              <Code2 className="w-6 h-6 text-white" />
+            <div className="w-10 h-10 rounded-lg overflow-hidden flex items-center justify-center transition-transform group-hover:scale-105">
+              <Image
+                src="https://res.cloudinary.com/dk7zfhbrj/image/upload/v1779051637/fremezdev_nonwit.png"
+                alt="FremezDevLogo"
+                width={100}
+                height={100}
+                className="object-cover"
+                priority
+              />
             </div>
-            <span className="text-xl font-bold text-white">DevPortfolio</span>
+            <span className="text-xl font-bold text-white">Dev Portfolio</span>
           </a>
 
           <div className="hidden md:flex items-center gap-8">
