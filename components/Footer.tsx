@@ -1,3 +1,4 @@
+import { menuItems } from "@/datas/navigations";
 import dayjs from "dayjs";
 import { Code2, Github, Heart, Linkedin, Mail, Twitter } from "lucide-react";
 
@@ -8,13 +9,10 @@ export const Footer = () => {
     sections: [
       {
         title: "Navigation",
-        links: [
-          { label: "Home", href: "#hero" },
-          { label: "Projects", href: "#projects" },
-          { label: "About", href: "#about" },
-          { label: "Experience", href: "#experience" },
-          { label: "Contact", href: "#contact" },
-        ],
+        links: menuItems.map((item) => ({
+          label: item.label,
+          href: item.href,
+        })),
       },
       {
         title: "Projects",
@@ -39,7 +37,7 @@ export const Footer = () => {
 
   return (
     <footer className="bg-[#0a0a0a] border-t border-white/5">
-      <div className="max-w-[1200px] mx-auto px-6 py-12">
+      <div className="max-w-300 mx-auto px-6 py-12">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div className="md:col-span-1">
             <a href="#hero" className="flex items-center gap-2 mb-4 group">
