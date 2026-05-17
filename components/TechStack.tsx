@@ -90,8 +90,8 @@ export const TechStack = () => {
               className="group focus-within:opacity-90 transition-opacity"
               style={{ "--tech-color": tech.color } as React.CSSProperties}
             >
-              <div className="bg-[#0a0a0a] border border-white/10 rounded-xl p-6 hover:border-(--tech-color) transition-all hover:shadow-lg h-full flex flex-col items-center text-center">
-                <tech.icon className="w-10 h-10 text-gray-500 mb-4 group-hover:text-(--tech-color) group-hover:scale-110 transition-all duration-300" />
+              <div className="bg-[#0a0a0a] border border-white/10 rounded-xl p-6 transition-all md:hover:border-(--tech-color) md:hover:shadow-lg h-full flex flex-col items-center text-center">
+                <tech.icon className="w-10 h-10 text-(--tech-color) mb-4 md:text-gray-500 md:group-hover:text-(--tech-color) md:group-hover:scale-110 transition-all duration-300" />
                 <h3 className="text-white font-semibold mb-1">{tech.name}</h3>
                 <p className="text-gray-500 text-sm">{tech.category}</p>
               </div>
