@@ -4,64 +4,37 @@ import { ProjectCard } from "./ProjectCard";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
+    title: "BarOps",
     description:
-      "Full-stack e-commerce application with Spring Boot backend, React frontend, and payment integration. Features include product catalog, shopping cart, and order management.",
-    technologies: ["Java", "Spring Boot", "React", "PostgreSQL", "Stripe"],
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
-    image:
-      "https://images.unsplash.com/photo-1557821552-17105176677c?w=600&h=400&fit=crop",
+      "Um mini-ERP full-stack especializado no gerenciamento de coquetelaria e eventos. Desenvolvido para controlar custos de bebidas, inventário e gestão de eventos com uma interface altamente responsiva.",
+    technologies: [
+      "Next.js",
+      "React Native",
+      "TypeScript",
+      "Tailwind CSS",
+      "shadcn/ui",
+    ],
+    githubUrl: "https://github.com/GLemes25/barops",
+    liveUrl: "", // Deixe vazio se não houver link em produção
+    image: "/images/barops-preview.png", // Sugestão: coloque um print real aqui
   },
   {
-    title: "Task Management API",
+    title: "Chef IA",
     description:
-      "RESTful API for task management with JWT authentication, role-based access control, and real-time notifications. Built with microservices architecture.",
-    technologies: ["Node.js", "Express", "MongoDB", "Redis", "Docker"],
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
-    image:
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop",
+      "Aplicativo mobile que utiliza inteligência artificial para gerar receitas customizadas. Integração direta com a API do Groq utilizando o modelo llama-3.1-8b-instant para processamento rápido de prompts gastronômicos.",
+    technologies: ["React Native", "Expo", "TypeScript", "Groq API", "Llama 3"],
+    githubUrl: "https://github.com/GLemes25/chef-ia",
+    liveUrl: "",
+    image: "/images/chefia-preview.png",
   },
   {
-    title: "Analytics Dashboard",
+    title: "Brivanna Hotel",
     description:
-      "Real-time analytics dashboard with interactive charts, data visualization, and export capabilities. Integrated with multiple data sources.",
-    technologies: ["React", "TypeScript", "Recharts", "TailwindCSS"],
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-  },
-  {
-    title: "Cloud File Storage",
-    description:
-      "Secure cloud storage solution with file sharing, version control, and collaborative features. Deployed on AWS with S3 and CloudFront.",
-    technologies: ["Java", "Spring", "AWS S3", "React", "PostgreSQL"],
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
-    image:
-      "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&h=400&fit=crop",
-  },
-  {
-    title: "Social Media App",
-    description:
-      "Social networking platform with posts, comments, likes, and real-time messaging. Features include user profiles, feed algorithms, and media uploads.",
-    technologies: ["React", "Node.js", "Socket.io", "MongoDB", "Redis"],
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
-    image:
-      "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=400&fit=crop",
-  },
-  {
-    title: "DevOps Pipeline",
-    description:
-      "Automated CI/CD pipeline with containerization, orchestration, and monitoring. Includes automated testing, deployment, and rollback strategies.",
-    technologies: ["Docker", "Kubernetes", "Jenkins", "AWS", "Terraform"],
-    githubUrl: "https://github.com",
-    liveUrl: "https://example.com",
-    image:
-      "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=600&h=400&fit=crop",
+      "Otimização e desenvolvimento web focado em conversão e experiência do hóspede para o setor de hotelaria, entregando alta performance e design focado no usuário.",
+    technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+    githubUrl: "https://github.com/GLemes25/brivanna-hotel",
+    liveUrl: "https://brivanna.com", // Exemplo de link real
+    image: "/images/brivanna-preview.png",
   },
 ];
 
@@ -77,10 +50,10 @@ export const Projects = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Featured Projects
+            Projetos em Destaque
           </h2>
           <p className="text-gray-400 text-lg">
-            Some of my recent work and personal projects
+            Aplicações reais desenvolvidas para resolver problemas reais
           </p>
         </motion.div>
 
@@ -101,4 +74,5 @@ export const Projects = () => {
     </section>
   );
 };
+
 export default Projects;
