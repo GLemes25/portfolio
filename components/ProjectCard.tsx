@@ -26,7 +26,7 @@ export const ProjectCard = ({
       transition={{ duration: 0.3 }}
       className="group bg-[#0a0a0a] border border-white/10 rounded-xl overflow-hidden hover:border-purple-600/50 transition-all hover:shadow-lg hover:shadow-purple-600/10 focus-within:opacity-90 flex flex-col h-full"
     >
-      <div className="relative h-48 bg-linear-to-br from-purple-600/20 to-violet-600/20 overflow-hidden shrink-0">
+      <div className="relative h-36 bg-linear-to-br from-purple-600/20 to-violet-600/20 overflow-hidden shrink-0">
         <Image
           src={image}
           alt={`Preview do projeto ${title}`}
@@ -36,15 +36,15 @@ export const ProjectCard = ({
         <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0a] via-transparent to-transparent" />
       </div>
 
-      <div className="p-6 flex flex-col flex-grow">
-        <h3 className="text-xl font-bold text-white mb-2 group-hover:text-purple-400 transition-colors">
+      <div className="p-4 flex flex-col flex-grow">
+        <h3 className="text-base font-bold text-white mb-1 group-hover:text-purple-400 transition-colors">
           {title}
         </h3>
-        <p className="text-gray-400 mb-4 leading-relaxed flex-grow">
+        <p className="text-gray-400 text-sm mb-3 leading-relaxed grow">
           {description}
         </p>
 
-        <div className="flex flex-wrap gap-2 mb-6">
+        <div className="flex flex-wrap gap-1.5 mb-4">
           {technologies.map((tech) => (
             <span
               key={tech}
