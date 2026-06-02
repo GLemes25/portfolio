@@ -34,7 +34,10 @@ Use estes commits passados do repositório como seu padrão de tom e estrutura:
 
 ## 4. Fluxo de Execução
 
-1. Analise brevemente os arquivos modificados (adicione-os ao _stage_ com `git add` se o usuário solicitar).
-2. Gere a mensagem de commit apropriada silenciosamente em inglês.
-3. Execute automaticamente o comando do git: `git commit -m "<mensagem_gerada>"`
-4. Exiba uma breve confirmação de sucesso mostrando a mensagem que foi commitada.
+1. Execute `git status` para ver **todos** os arquivos modificados, incluindo untracked (arquivos novos, imagens em `public/`, etc.).
+2. Inclua no stage **todos** os arquivos relacionados ao trabalho realizado — nunca ignore untracked files como assets, imagens ou pastas novas.
+3. Gere a mensagem de commit apropriada silenciosamente em inglês.
+4. Execute automaticamente o comando do git: `git commit -m "<mensagem_gerada>"`
+5. Exiba uma breve confirmação de sucesso mostrando a mensagem que foi commitada.
+
+> **ATENÇÃO:** Antes de commitar, sempre verifique `git status` para garantir que nenhum arquivo untracked relacionado ao trabalho ficou de fora do stage.
