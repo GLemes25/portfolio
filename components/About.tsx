@@ -1,6 +1,7 @@
 "use client";
 import { Award, BookOpen, Code2, Rocket } from "lucide-react";
 import { motion } from "motion/react";
+import Image from "next/image";
 
 export const About = () => {
   const highlights = [
@@ -56,7 +57,6 @@ export const About = () => {
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Left - Perfil */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -65,9 +65,13 @@ export const About = () => {
           >
             <div className="bg-[#0a0a0a] border border-white/10 rounded-xl p-8">
               <div className="flex items-center gap-6 mb-6">
-                <div className="w-24 h-24 bg-linear-to-br from-purple-600 to-violet-600 rounded-full flex items-center justify-center text-4xl">
-                  👨‍💻
-                </div>
+                <Image
+                  src="/developer.svg"
+                  alt="Developer"
+                  width={150}
+                  height={150}
+                  priority
+                />
                 <div>
                   <h3 className="text-2xl font-bold text-white mb-1">
                     Gabriel Lemes

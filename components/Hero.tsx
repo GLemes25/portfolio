@@ -39,8 +39,8 @@ export const Hero = () => {
             transition={{ duration: 0.5 }}
             className="md:order-first"
           >
-            <div className="inline-block mb-4">
-              <span className="px-4 py-2 bg-brand/10 border border-brand/20 rounded-full text-brand text-sm">
+            <div className="inline-block mb-4 mt-5">
+              <span className="px-4 py-2  bg-brand/10 border border-brand/20 rounded-full text-brand text-sm">
                 Disponível para oportunidades
               </span>
             </div>

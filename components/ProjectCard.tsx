@@ -8,7 +8,7 @@ type ProjectCardPropsType = {
   description: string;
   technologies: string[];
   githubUrl: string;
-  liveUrl?: string; // Agora é opcional
+  liveUrl?: string;
   image: string;
 };
 
@@ -22,40 +22,41 @@ export const ProjectCard = ({
 }: ProjectCardPropsType) => {
   return (
     <motion.div
-      whileHover={{ y: -8 }}
+      whileHover={{ y: -5 }}
       transition={{ duration: 0.3 }}
-      className="group bg-[#0a0a0a] border border-white/10 rounded-xl overflow-hidden hover:border-purple-600/50 transition-all hover:shadow-lg hover:shadow-purple-600/10 focus-within:opacity-90 flex flex-col h-full"
+      className="group flex flex-col h-full bg-transparent border border-white/10 rounded-xl overflow-hidden hover:border-white/20 transition-all focus-within:opacity-90"
     >
-      <div className="relative h-36 bg-linear-to-br from-purple-600/20 to-violet-600/20 overflow-hidden shrink-0">
+      <div className="relative aspect-video w-full overflow-hidden bg-white/5 shrink-0">
         <Image
           src={image}
           alt={`Preview do projeto ${title}`}
           fill
-          className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"
+          className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-transform duration-500"
         />
-        <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0a] via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-[#0a0a0a] via-transparent to-transparent opacity-90" />
       </div>
 
-      <div className="p-4 flex flex-col flex-grow">
-        <h3 className="text-base font-bold text-white mb-1 group-hover:text-purple-400 transition-colors">
-          {title}
-        </h3>
-        <p className="text-gray-400 text-sm mb-3 leading-relaxed grow">
-          {description}
-        </p>
+      <div className="p-5 flex flex-col grow gap-4 bg-[#0a0a0a]">
+        <div>
+          <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-purple-400 transition-colors">
+            {title}
+          </h3>
+          <p className="text-gray-400 text-sm leading-relaxed line-clamp-3">
+            {description}
+          </p>
+        </div>
 
-        <div className="flex flex-wrap gap-1.5 mb-4">
+        <div className="flex flex-wrap gap-2 mt-auto">
           {technologies.map((tech) => (
             <span
               key={tech}
-              className="px-3 py-1 bg-purple-600/10 border border-purple-600/20 rounded-full text-purple-400 text-xs font-medium"
+              className="px-2.5 py-1 bg-white/5 border border-white/5 rounded-md text-gray-300 text-xs font-medium"
             >
               {tech}
             </span>
           ))}
         </div>
 
-        {/* Lógica condicional para os botões */}
         <div className="flex gap-3 mt-auto">
           <a
             href={githubUrl}
@@ -65,9 +66,8 @@ export const ProjectCard = ({
             aria-label={`Ver código fonte do projeto ${title} no GitHub`}
           >
             <Github className="w-4 h-4" />
-            Código
+            <span className="font-medium">Código</span>
           </a>
-
           {liveUrl && (
             <a
               href={liveUrl}
@@ -77,7 +77,7 @@ export const ProjectCard = ({
               aria-label={`Ver demonstração ao vivo do projeto ${title}`}
             >
               <ExternalLink className="w-4 h-4" />
-              Demo
+              <span className="font-medium">Demo</span>
             </a>
           )}
         </div>
