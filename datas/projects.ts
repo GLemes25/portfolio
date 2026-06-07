@@ -21,7 +21,7 @@ export const projects: ProjectType[] = [
     ],
     githubUrl: "https://github.com/GLemes25/barops",
     liveUrl: "https://barops.fremez.com/",
-    image: "/projects/barops.png",
+    image: "/projects/barops2.png",
   },
   {
     title: "Chef IA",
@@ -39,7 +39,7 @@ export const projects: ProjectType[] = [
     technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
     githubUrl: "https://github.com/GLemes25/brivanna-hotel",
     liveUrl: "https://www.brivannahotel.com.br/,",
-    image: "/projects/brivannahotel.png",
+    image: "/projects/brivannahotel2.png",
   },
   {
     title: "Nummus Premium",
@@ -55,7 +55,7 @@ export const projects: ProjectType[] = [
     ],
     githubUrl: "https://github.com/GLemes25/nummus-web",
     liveUrl: "",
-    image: "/projects/nummus.png",
+    image: "/projects/nummus2.png",
   },
   {
     title: "Brivan Sabor",
@@ -96,7 +96,7 @@ export const projects: ProjectType[] = [
     technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
     githubUrl: "https://github.com/GLemes25/eskoria-os",
     liveUrl: "https://eskoria-so.vercel.app/",
-    image: "/projects/eskoria.png",
+    image: "/projects/eskoria2.png",
   },
   {
     title: "DNA Doceria",
@@ -113,6 +113,6 @@ export const projects: ProjectType[] = [
     ],
     githubUrl: "https://github.com/GLemes25/menu-dna-doceria",
     liveUrl: "https://dnadoceria.fremez.com/",
-    image: "/projects/dnadoceria.png",
+    image: "/projects/dnadoceria2.png",
   },
 ];
