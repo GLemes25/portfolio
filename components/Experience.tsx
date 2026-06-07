@@ -1,59 +1,7 @@
 "use client";
 import { Briefcase, GraduationCap } from "lucide-react";
 import { motion } from "motion/react";
-
-const experiences = [
-  {
-    type: "work",
-    title: "Desenvolvedor Trainee",
-    company: "GEOI2 Tecnologia da Informação LTDA",
-    location: "Campo Grande - MS, Brasil",
-    period: "02/2023 - 03/2024",
-    description:
-      "Atuação no desenvolvimento e manutenção de sistemas corporativos para a Secretaria da Fazenda do MS. Desenvolvimento de APIs e Web Services utilizando Java, Spring Boot e Maven com integração ao SQL Server. Experiência com C# e ASP.NET MVC, além de participação em equipes ágeis com Scrum, contribuindo na análise de requisitos e melhorias contínuas.",
-    technologies: [
-      "Java",
-      "Spring Boot",
-      "C#",
-      "ASP.NET MVC",
-      "SQL Server",
-      "Scrum",
-    ],
-  },
-  {
-    type: "work",
-    title: "Estagiário em Desenvolvimento de Software",
-    company: "Mensurepec",
-    location: "Brasil",
-    period: "02/2021 - 06/2022",
-    description:
-      "Desenvolvimento e manutenção de aplicações web e mobile utilizando React.js, React Native, TypeScript e MobX. Criação de APIs com Node.js, Express e GraphQL integradas ao MongoDB. Participação em projetos de sistemas de gestão e publicação de aplicações mobile.",
-    technologies: [
-      "React",
-      "React Native",
-      "TypeScript",
-      "Node.js",
-      "Express",
-      "MongoDB",
-      "GraphQL",
-    ],
-  },
-  {
-    type: "education",
-    title: "Engenharia da Computação (Graduação em andamento)",
-    company: "Anhanguera - Uniderp",
-    location: "Campo Grande - MS",
-    period: "2020 - 2026",
-    description:
-      "Formação com foco em desenvolvimento de software, banco de dados e engenharia de sistemas. Aplicação prática dos conceitos em projetos acadêmicos e profissionais.",
-    technologies: [
-      "Algoritmos",
-      "Estruturas de Dados",
-      "Banco de Dados",
-      "Engenharia de Software",
-    ],
-  },
-];
+import { experiences } from "@/datas/experiences";
 
 export const Experience = () => {
   return (
@@ -100,7 +48,7 @@ export const Experience = () => {
                       index % 2 === 0 ? "md:text-right md:pr-12" : "md:pl-12"
                     }`}
                   >
-                    <div className="bg-[#111111] border border-white/10 rounded-xl p-6 hover:border-purple-600/50 transition-all hover:shadow-lg hover:shadow-purple-600/10">
+                    <div className="bg-[#111111] border border-white/10 rounded-xl p-6 hover:border-purple-600/50 transition-all hover:shadow-lg hover:shadow-purple-600/10 focus-within:opacity-90">
                       <div
                         className={`inline-flex items-center justify-center w-12 h-12 bg-purple-600/10 border border-purple-600/20 rounded-lg mb-4 ${
                           index % 2 === 0 ? "md:float-right md:ml-4" : "md:mr-4"
@@ -113,8 +61,8 @@ export const Experience = () => {
                         )}
                       </div>
 
-                      <div className="space-y-2">
-                        <span className="px-3 py-1 bg-purple-600/10 border border-purple-600/20 rounded-full text-purple-400 text-sm">
+                      <div className="space-y-2 clear-both">
+                        <span className="inline-block px-3 py-1 bg-purple-600/10 border border-purple-600/20 rounded-full text-purple-400 text-sm mb-2">
                           {exp.period}
                         </span>
 
@@ -128,11 +76,15 @@ export const Experience = () => {
 
                         <p className="text-gray-500 text-sm">{exp.location}</p>
 
-                        <p className="text-gray-400 leading-relaxed">
+                        <p className="text-gray-400 leading-relaxed mt-4">
                           {exp.description}
                         </p>
 
-                        <div className="flex flex-wrap gap-2 pt-2">
+                        <div
+                          className={`flex flex-wrap gap-2 pt-4 ${
+                            index % 2 === 0 ? "md:justify-end" : "justify-start"
+                          }`}
+                        >
                           {exp.technologies.map((tech) => (
                             <span
                               key={tech}
