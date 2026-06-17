@@ -1,132 +1,93 @@
 import { menuItems } from "@/datas/navigations";
+import { profileData } from "@/datas/profile";
 import dayjs from "dayjs";
-import { Code2, Github, Heart, Linkedin, Mail, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 export const Footer = () => {
   const currentYear = dayjs().year();
 
-  const footerLinks = {
-    sections: [
-      {
-        title: "Navigation",
-        links: menuItems.map((item) => ({
-          label: item.label,
-          href: item.href,
-        })),
-      },
-      {
-        title: "Projects",
-        links: [
-          { label: "E-Commerce Platform", href: "#projects" },
-          { label: "Task Management API", href: "#projects" },
-          { label: "Analytics Dashboard", href: "#projects" },
-          { label: "View All", href: "#projects" },
-        ],
-      },
-      {
-        title: "Connect",
-        links: [
-          { label: "GitHub", href: "https://github.com" },
-          { label: "LinkedIn", href: "https://linkedin.com" },
-          { label: "Twitter", href: "https://twitter.com" },
-          { label: "Email", href: "mailto:alex.johnson@example.com" },
-        ],
-      },
-    ],
-  };
-
   return (
-    <footer className="bg-[#0a0a0a] border-t border-white/5">
-      <div className="max-w-300 mx-auto px-6 py-12">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
-          <div className="md:col-span-1">
-            <a href="#hero" className="flex items-center gap-2 mb-4 group">
-              <div className="w-10 h-10 bg-linear-to-br from-purple-600 to-violet-600 rounded-lg flex items-center justify-center transition-transform group-hover:scale-105">
-                <Code2 className="w-6 h-6 text-white" />
-              </div>
-              <span className="text-xl font-bold text-white">DevPortfolio</span>
+    <footer className="bg-[#0a0a0a] border-t border-white/5 pt-16 pb-8 px-6">
+      <div className="max-w-300 mx-auto">
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-12 mb-16">
+          <div className="flex flex-col items-center md:items-start w-full md:w-1/3">
+            <a
+              href="#hero"
+              className="flex items-center gap-3 mb-6 group focus-visible:opacity-90 focus-visible:outline-none"
+            >
+              <span className="text-xl font-bold text-white tracking-wide">
+                DEV {profileData.shortName}
+              </span>
             </a>
-            <p className="text-gray-400 text-sm mb-4">
-              Building exceptional web applications with modern technologies.
+
+            <p className="text-gray-400 text-sm text-center md:text-left mb-6 leading-relaxed max-w-xs">
+              Construindo soluções web modernas, escaláveis e focadas na
+              experiência do usuário.
             </p>
-            <div className="flex gap-3">
+
+            <div className="flex items-center gap-4">
               <a
-                href="https://github.com"
+                href={profileData.socials.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-white/5 hover:bg-purple-600/20 border border-white/10 hover:border-purple-600/50 rounded-lg flex items-center justify-center transition-all"
+                aria-label="GitHub"
+                className="w-10 h-10 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-purple-500 rounded-lg flex items-center justify-center transition-all focus-visible:opacity-90 focus-visible:outline-none"
               >
-                <Github className="w-5 h-5 text-gray-400" />
+                <Github className="w-4 h-4 text-gray-400 hover:text-purple-400 transition-colors" />
               </a>
               <a
-                href="https://linkedin.com"
+                href={profileData.socials.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-white/5 hover:bg-purple-600/20 border border-white/10 hover:border-purple-600/50 rounded-lg flex items-center justify-center transition-all"
+                aria-label="LinkedIn"
+                className="w-10 h-10 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-purple-500 rounded-lg flex items-center justify-center transition-all focus-visible:opacity-90 focus-visible:outline-none"
               >
-                <Linkedin className="w-5 h-5 text-gray-400" />
+                <Linkedin className="w-4 h-4 text-gray-400 hover:text-purple-400 transition-colors" />
               </a>
               <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 bg-white/5 hover:bg-purple-600/20 border border-white/10 hover:border-purple-600/50 rounded-lg flex items-center justify-center transition-all"
+                href={`mailto:${profileData.email}`}
+                aria-label="Email"
+                className="w-10 h-10 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-purple-500 rounded-lg flex items-center justify-center transition-all focus-visible:opacity-90 focus-visible:outline-none"
               >
-                <Twitter className="w-5 h-5 text-gray-400" />
-              </a>
-              <a
-                href="mailto:alex.johnson@example.com"
-                className="w-10 h-10 bg-white/5 hover:bg-purple-600/20 border border-white/10 hover:border-purple-600/50 rounded-lg flex items-center justify-center transition-all"
-              >
-                <Mail className="w-5 h-5 text-gray-400" />
+                <Mail className="w-4 h-4 text-gray-400 hover:text-purple-400 transition-colors" />
               </a>
             </div>
           </div>
 
-          {footerLinks.sections.map((section) => (
-            <div key={section.title}>
-              <h4 className="text-white font-semibold mb-4">{section.title}</h4>
-              <ul className="space-y-2">
-                {section.links.map((link) => (
-                  <li key={link.label}>
+          <div className="flex flex-col sm:flex-row gap-12 sm:gap-24 text-center sm:text-left">
+            <div>
+              <h4 className="text-white font-semibold mb-6">Navegação</h4>
+              <ul className="space-y-4">
+                {menuItems.map((item) => (
+                  <li key={item.label}>
                     <a
-                      href={link.href}
-                      className="text-gray-400 hover:text-purple-400 transition-colors text-sm"
+                      href={item.href}
+                      className="text-gray-400 hover:text-purple-400 transition-colors text-sm focus-visible:opacity-90 focus-visible:outline-none inline-block"
                     >
-                      {link.label}
+                      {item.label}
                     </a>
                   </li>
                 ))}
               </ul>
             </div>
-          ))}
+          </div>
         </div>
 
-        <div className="pt-8 border-t border-white/5">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-400 text-sm flex items-center gap-2">
-              © {currentYear} Alex Johnson. Made with{" "}
-              <Heart className="w-4 h-4 text-purple-600 fill-purple-600" /> and
-              React
-            </p>
-            <div className="flex gap-6 text-sm">
-              <a
-                href="#"
-                className="text-gray-400 hover:text-purple-400 transition-colors"
-              >
-                Privacy Policy
-              </a>
-              <a
-                href="#"
-                className="text-gray-400 hover:text-purple-400 transition-colors"
-              >
-                Terms of Service
-              </a>
-            </div>
+        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-gray-400 text-sm flex items-center justify-center gap-2 text-center md:text-left">
+            © {currentYear} {profileData.shortName}. Feito com Next.js.
+          </p>
+
+          <div className="flex gap-6 text-sm">
+            <a
+              href="#"
+              className="text-gray-400 hover:text-purple-400 transition-colors focus-visible:opacity-90 focus-visible:outline-none"
+            >
+              Política de Privacidade
+            </a>
           </div>
         </div>
       </div>
     </footer>
   );
 };
-export default Footer;

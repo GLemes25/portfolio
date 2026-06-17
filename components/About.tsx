@@ -1,4 +1,5 @@
 "use client";
+import { profileData } from "@/datas/profile";
 import { Award, BookOpen, Code2, Rocket } from "lucide-react";
 import { motion } from "motion/react";
 import Image from "next/image";
@@ -27,17 +28,6 @@ export const About = () => {
     },
   ];
 
-  const skills = [
-    "Desenvolvimento Backend (Java, C#)",
-    "Desenvolvimento Frontend (React)",
-    "APIs REST e Web Services",
-    "Banco de Dados (SQL Server, MongoDB)",
-    "Integração de Sistemas",
-    "Versionamento com Git",
-    "Metodologias Ágeis (Scrum)",
-    "Desenvolvimento Full Stack",
-  ];
-
   return (
     <section id="about" className="py-24 px-6 bg-[#111111]">
       <div className="max-w-300 mx-auto">
@@ -64,7 +54,7 @@ export const About = () => {
             viewport={{ once: true }}
           >
             <div className="bg-[#0a0a0a] border border-white/10 rounded-xl p-8">
-              <div className="flex items-center gap-6 mb-6">
+              <div className="flex items-center gap-6 mb-4">
                 <Image
                   src="/developer.svg"
                   alt="Developer"
@@ -74,7 +64,7 @@ export const About = () => {
                 />
                 <div>
                   <h3 className="text-2xl font-bold text-white mb-1">
-                    Gabriel Lemes
+                    {profileData.shortName}
                   </h3>
                   <p className="text-purple-400">
                     Desenvolvedor Full Stack Júnior
@@ -82,14 +72,14 @@ export const About = () => {
                 </div>
               </div>
 
-              <p className="text-gray-400 leading-relaxed mb-6">
+              <p className="text-gray-400 leading-relaxed mb-4">
                 Desenvolvedor com cerca de 2 anos de experiência atuando no
                 desenvolvimento de aplicações web, APIs e sistemas corporativos.
                 Tenho experiência prática com Java (Spring Boot), C#, React e
                 banco de dados relacionais e não relacionais.
               </p>
 
-              <p className="text-gray-400 leading-relaxed mb-6">
+              <p className="text-gray-400 leading-relaxed mb-4">
                 Já atuei em projetos reais, incluindo sistemas para o setor
                 público, com foco em desempenho, estabilidade e integração de
                 sistemas. Tenho familiaridade com metodologias ágeis (Scrum) e
@@ -105,7 +95,7 @@ export const About = () => {
           </motion.div>
 
           {/* Right - Destaques + Skills */}
-          <div className="space-y-6">
+          <div className="space-y-10">
             {/* Highlights */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
@@ -134,30 +124,6 @@ export const About = () => {
               ))}
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="bg-[#0a0a0a] border border-white/10 rounded-xl p-8"
-            >
-              <h4 className="text-xl font-bold text-white mb-6">
-                Principais Competências
-              </h4>
-
-              <div className="grid grid-cols-2 gap-3">
-                {skills.map((skill) => (
-                  <div
-                    key={skill}
-                    className="flex items-center gap-2 text-gray-400"
-                  >
-                    <div className="w-2 h-2 bg-purple-600 rounded-full" />
-                    <span>{skill}</span>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-
             {/* Formação */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -166,7 +132,9 @@ export const About = () => {
               viewport={{ once: true }}
               className="bg-[#0a0a0a] border border-white/10 rounded-xl p-8"
             >
-              <h4 className="text-xl font-bold text-white mb-4">Formação</h4>
+              <h4 className="text-xl font-bold text-purple-600 mb-4">
+                Formação
+              </h4>
 
               <div>
                 <h5 className="text-white font-semibold">

@@ -1,4 +1,5 @@
 "use client";
+import { profileData } from "@/datas/profile";
 import { Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
 import { motion } from "motion/react";
 
@@ -7,19 +8,19 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "gabriellemes924@gmail.com",
-      href: "mailto:gabriellemes924@gmail.com",
+      value: profileData.email,
+      href: `mailto:${profileData.email}`,
     },
     {
       icon: Phone,
       label: "Telefone",
-      value: "(67) 99117-9190",
+      value: profileData.phone.display,
       href: "tel:+5567991179190",
     },
     {
       icon: MapPin,
       label: "Localização",
-      value: "Campo Grande - MS, Brasil",
+      value: profileData.location,
       href: "#",
     },
   ];
@@ -28,14 +29,14 @@ const Contact = () => {
     {
       icon: Github,
       label: "GitHub",
-      username: "GLemes25",
-      href: "https://github.com/GLemes25",
+      username: profileData.socials.github.replace("https://github.com/", ""),
+      href: profileData.socials.github,
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      username: "Gabriel Lemes",
-      href: "https://linkedin.com/in/gabriel-lemes-G25",
+      username: profileData.shortName,
+      href: profileData.socials.linkedin,
     },
   ];
 
@@ -123,14 +124,14 @@ const Contact = () => {
             {/* CTA */}
             <div className="pt-4 flex gap-4">
               <a
-                href="mailto:gabriellemes924@gmail.com"
+                href={`mailto:${profileData.email}`}
                 className="flex-1 px-6 py-4 bg-purple-600 hover:bg-purple-700 text-white text-center rounded-xl transition-all font-semibold"
               >
                 Enviar Email
               </a>
 
               <a
-                href="https://wa.me/5567991179190"
+                href={profileData.phone.link}
                 target="_blank"
                 className="flex-1 px-6 py-4 bg-green-600 hover:bg-green-700 text-white text-center rounded-xl transition-all font-semibold flex items-center justify-center gap-2"
               >
@@ -160,7 +161,7 @@ const Contact = () => {
             </p>
 
             <a
-              href="mailto:gabriellemes924@gmail.com"
+              href={`mailto:${profileData.email}`}
               className="inline-block px-8 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-all font-semibold"
             >
               Iniciar conversa

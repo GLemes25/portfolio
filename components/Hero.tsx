@@ -1,4 +1,5 @@
 "use client";
+import { profileData } from "@/datas/profile";
 import { ArrowRight, Mail } from "lucide-react";
 import { motion } from "motion/react";
 import Image from "next/image";
@@ -48,12 +49,12 @@ export const Hero = () => {
             <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6">
               Olá, eu sou{" "}
               <span className="bg-linear-to-r from-brand to-brand-alt bg-clip-text text-transparent">
-                Gabriel Lemes
+                {profileData.shortName}
               </span>
             </h1>
 
             <h2 className="text-2xl md:text-3xl text-muted-foreground mb-6">
-              Desenvolvedor Full Stack
+              {profileData.role}
             </h2>
             <div className="flex justify-center md:hidden">
               <div className="relative">
@@ -97,7 +98,7 @@ export const Hero = () => {
 
             <div className="flex gap-4 mb-5">
               <a
-                href="https://github.com/GLemes25"
+                href={profileData.socials.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
@@ -121,7 +122,7 @@ export const Hero = () => {
               </a>
 
               <a
-                href="https://linkedin.com/in/gabriel-lemes-G25"
+                href={profileData.socials.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
@@ -146,7 +147,7 @@ export const Hero = () => {
               </a>
 
               <a
-                href="mailto:gabriellemes924@gmail.com"
+                href={`mailto:${profileData.email}`}
                 aria-label="Email"
                 className="w-12 h-12 bg-foreground/5 hover:bg-brand/20 border border-border hover:border-brand/50 rounded-lg flex items-center justify-center transition-all focus-visible:outline-none focus-visible:opacity-90"
               >
