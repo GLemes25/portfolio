@@ -14,7 +14,11 @@
       "Bash(git -C /home/gabriel/Documents/projects/portfolio commit -m \"chore: update brivansabor project preview image\")",
       "Bash(git -C /home/gabriel/Documents/projects/portfolio diff .claude/settings.json)",
       "Bash(git -C /home/gabriel/Documents/projects/portfolio add .claude/settings.json)",
-      "Bash(git -C /home/gabriel/Documents/projects/portfolio commit -m \"chore: update settings.json with allowed git permissions\")"
+      "Bash(git -C /home/gabriel/Documents/projects/portfolio commit -m \"chore: update settings.json with allowed git permissions\")",
+      "Bash(git -C /home/gabriel/Documents/projects/portfolio add app/globals.css components/Contact.tsx components/Footer.tsx components/Hero.tsx datas/profile.ts)",
+      "Bash(git -C /home/gabriel/Documents/projects/portfolio commit -m \"refactor: centralize social and phone data in profileData and update Contact to use theme variables\")",
+      "Bash(git -C /home/gabriel/Documents/projects/portfolio status --short)",
+      "Bash(git -C /home/gabriel/Documents/projects/portfolio commit -m \"chore: update project claude settings\")"
     ]
   }
 }
