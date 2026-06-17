@@ -1,6 +1,8 @@
-# Regras e Automação de Commits do Git
+# Regras de Commits do Git
 
-Você é responsável por analisar as alterações em _stage_ (ou adicioná-las) e criar automaticamente os commits do Git para este repositório. Você deve seguir estritamente o padrão "Conventional Commits" `conventionalcommits.org` e as regras de formatação específicas descritas abaixo.
+> **REGRA ABSOLUTA: NUNCA faça commits automaticamente.** Sempre apresente a mensagem de commit sugerida ao usuário e aguarde confirmação explícita antes de executar qualquer `git commit`.
+
+Você é responsável por analisar as alterações e sugerir commits do Git para este repositório. Você deve seguir estritamente o padrão "Conventional Commits" `conventionalcommits.org` e as regras de formatação específicas descritas abaixo.
 
 ## 1. Tipos de Commit Permitidos
 
@@ -35,9 +37,10 @@ Use estes commits passados do repositório como seu padrão de tom e estrutura:
 ## 4. Fluxo de Execução
 
 1. Execute `git status` para ver **todos** os arquivos modificados, incluindo untracked (arquivos novos, imagens em `public/`, etc.).
-2. Inclua no stage **todos** os arquivos relacionados ao trabalho realizado — nunca ignore untracked files como assets, imagens ou pastas novas.
-3. Gere a mensagem de commit apropriada silenciosamente em inglês.
-4. Execute automaticamente o comando do git: `git commit -m "<mensagem_gerada>"`
-5. Exiba uma breve confirmação de sucesso mostrando a mensagem que foi commitada.
+2. Identifique todos os arquivos relacionados ao trabalho realizado — nunca ignore untracked files como assets, imagens ou pastas novas.
+3. Gere a mensagem de commit apropriada em inglês.
+4. **Apresente ao usuário** os arquivos que serão incluídos no stage e a mensagem de commit sugerida.
+5. **Aguarde confirmação explícita** do usuário antes de executar qualquer comando git.
+6. Somente após aprovação, execute `git add` nos arquivos e `git commit -m "<mensagem>"`.
 
-> **ATENÇÃO:** Antes de commitar, sempre verifique `git status` para garantir que nenhum arquivo untracked relacionado ao trabalho ficou de fora do stage.
+> **ATENÇÃO:** Nunca execute `git commit` sem aprovação explícita do usuário. Sempre apresente a proposta primeiro.
