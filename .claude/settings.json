@@ -1,7 +1,20 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git remote *)"
+      "Bash(git remote *)",
+      "Bash(git -C /home/gabriel/Documents/projects/portfolio diff app/page.tsx)",
+      "Bash(git -C /home/gabriel/Documents/projects/portfolio diff .claude/rules/commits.md)",
+      "Bash(git -C /home/gabriel/Documents/projects/portfolio add components/About.tsx components/Contact.tsx components/Footer.tsx components/Hero.tsx datas/profile.ts tasks/04.md)",
+      "Bash(git -C /home/gabriel/Documents/projects/portfolio commit -m \"refactor: centralize personal data across Hero, About, Footer and Contact using profileData\")",
+      "Bash(git -C /home/gabriel/Documents/projects/portfolio add app/page.tsx)",
+      "Bash(git -C /home/gabriel/Documents/projects/portfolio commit -m \"fix: use named import for Footer in page.tsx\")",
+      "Bash(git -C /home/gabriel/Documents/projects/portfolio add .claude/rules/commits.md)",
+      "Bash(git -C /home/gabriel/Documents/projects/portfolio commit -m \"chore: update commit rules to require explicit user confirmation\")",
+      "Bash(git -C /home/gabriel/Documents/projects/portfolio add public/projects/brivansabor.png)",
+      "Bash(git -C /home/gabriel/Documents/projects/portfolio commit -m \"chore: update brivansabor project preview image\")",
+      "Bash(git -C /home/gabriel/Documents/projects/portfolio diff .claude/settings.json)",
+      "Bash(git -C /home/gabriel/Documents/projects/portfolio add .claude/settings.json)",
+      "Bash(git -C /home/gabriel/Documents/projects/portfolio commit -m \"chore: update settings.json with allowed git permissions\")"
     ]
   }
 }
