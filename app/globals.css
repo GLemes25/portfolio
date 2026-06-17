@@ -7,6 +7,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-whatsapp: var(--whatsapp);
+  --color-whatsapp-foreground: var(--whatsapp-foreground);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-geist-mono);
   --color-brand: var(--brand);
@@ -52,6 +54,8 @@
 }
 
 :root {
+  --whatsapp: oklch(0.527 0.196 145);
+  --whatsapp-foreground: oklch(0.985 0 0);
   --brand: oklch(0.558 0.288 291);
   --brand-alt: oklch(0.524 0.31 278);
   --brand-dim: oklch(0.477 0.256 291);
@@ -91,6 +95,8 @@
 }
 
 .dark {
+  --whatsapp: oklch(0.527 0.196 145);
+  --whatsapp-foreground: oklch(0.985 0 0);
   --background: oklch(0.065 0 0);
   --foreground: oklch(0.985 0 0);
   --card: oklch(0.205 0 0);

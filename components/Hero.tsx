@@ -98,7 +98,7 @@ export const Hero = () => {
 
             <div className="flex gap-4 mb-5">
               <a
-                href={profileData.socials.github}
+                href={profileData.socials.github.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
@@ -122,7 +122,7 @@ export const Hero = () => {
               </a>
 
               <a
-                href={profileData.socials.linkedin}
+                href={profileData.socials.linkedin.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"

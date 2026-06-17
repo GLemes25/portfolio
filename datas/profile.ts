@@ -6,10 +6,17 @@ export const profileData = {
   email: "gabriellemes924@gmail.com",
   phone: {
     display: "+55 67 99117-9190",
-    link: "https://wa.me/5567991179190",
+    tel: "tel:+5567991179190",
+    whatsapp: "https://wa.me/5567991179190",
   },
   socials: {
-    github: "https://github.com/GLemes25",
-    linkedin: "https://linkedin.com/in/gabriel-lemes-g25",
+    github: {
+      url: "https://github.com/GLemes25",
+      username: "GLemes25",
+    },
+    linkedin: {
+      url: "https://linkedin.com/in/gabriel-lemes-g25",
+      username: "gabriel-lemes-g25",
+    },
   },
 };
