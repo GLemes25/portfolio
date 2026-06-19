@@ -103,7 +103,7 @@ export const projects: ProjectType[] = [
       "Web Speech API",
     ],
     githubUrl: "https://github.com/GLemes25/weather-AI",
-    liveUrl: "",
+    liveUrl: "https://weather-ai.fremez.com/",
     image: "/projects/previsao-tempo-ia.png",
   },
   {
